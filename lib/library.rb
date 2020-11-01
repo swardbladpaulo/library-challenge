@@ -1,32 +1,28 @@
 require 'date'
 require 'yaml'
 
-recipe =
-
 class Library
-    attr_accessor :book, :collection, :available, :book_status, :return_date
+    STANDARD_VALIDITY_MONTH = 1
+    attr_accessor :collection, :return_date, :title
 
     def initialize()
-        @book = true
         @collection = YAML.load_file('./lib/data.yml')
-        @book_status = :available
         @return_date = Date.today.next_month(1).strftime("%m/%y")
     end
 
-
-    def load_data(collection)
+    def load_data(collection) 
         collection = collection
     end
 
-    def checking_availability(book) 
-        @book = book.select{|collection|collection[:item][:available].to eq true}
+    def book_status(available)
+        book_status = @collection.select{|collection|collection[:item][:title] == available}         
     end
 
-    def title_search(search)
+    def title_search(search) 
         @collection = collection.select{|collection|collection[:item][:title].include? search}  
     end
 
-    def author_search(search)
+    def author_search(search) 
         @collection = collection.select{|collection|collection[:item][:author].include? search}  
     end
 
@@ -34,4 +30,11 @@ class Library
         Date.today.next_month(STANDARD_VALIDITY_MONTH).strftime('%m&%y')
     end
 
+    def available(collection)
+        collection = @collection.select { |item| item[:available] == true }
+    end
+
+    def return_book(book_return_date)
+        @return_date = book_return_date
+    end
 end
