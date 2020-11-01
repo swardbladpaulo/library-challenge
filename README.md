@@ -21,9 +21,9 @@ The code lets a user search for a book via author or title. The user can also se
 
 ## Dependencies
 
-Rspec https://rubygems.org/gems/rspec/
-YAML (https://yaml.org/)
-source 'https://rubygems.org'
+* Rspec https://rubygems.org/gems/rspec/
+* YAML (https://yaml.org/)
+* source 'https://rubygems.org'
 
 ## Setup
 
