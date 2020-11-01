@@ -1,6 +1,65 @@
 ## Library Challenge
 ### Week 1 Ruby challenge
 
+### User Stories
+
+As a Library
+In order to allow visitors to rent books
+I want the visitors to view a list of available books in the library
+
+As a Visitor
+In order to lend a book
+I want to see the title and the author of the book
+
+As a Library 
+I want the return date to be a month ahead of the checkout date
+So that the lender knows when to return it
+
+## The Code
+
+The code lets a user search for a book via author or title. The user can also see if a book is available. 
+
+## Dependencies
+
+Rspec https://rubygems.org/gems/rspec/
+YAML (https://yaml.org/)
+source 'https://rubygems.org'
+
+## Setup
+
+* Fork the repo from https://github.com/FlisAnn/library-challenge
+* In your terminal go to the library-challange folder
+* Type IRB and the following:
+ ```
+ require 'yaml'
+ load './lib/library.rb'
+ load './lib/user.rb'
+ ```
+
+## Instructions
+
+Creating a collection
+ ```
+collection = YAML.load_file('./lib/data.yml')
+
+```
+
+## Acknowledgements
+
+Course material from Craft Academy
+Demos from our coaches
+
+
+## Update and Improvments
+
+We want to create the functionality of changing the value of available so that we can check out a book. 
+
+## Licence
+
+* The MIT License (MIT).
+
+
+
 Instructions
 -------
 Read this entire README carefully and follow all instructions.
